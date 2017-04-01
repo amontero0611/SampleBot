@@ -1,0 +1,15 @@
+---
+declared-services:
+  ConvNueva:
+    label: conversation
+    plan: standard
+applications:
+- name: SampleBot
+  command: npm start
+  path: .
+  memory: 128M
+  instances: 1
+  services:
+  - MyConversationService
+  env:
+    NPM_CONFIG_PRODUCTION: false
